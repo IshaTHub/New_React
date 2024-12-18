@@ -22,6 +22,12 @@ const NetflixCards = () => {
     return genre;
   };
 
+  const AgeLimit = () => {
+    if (age >= 25) return "can definately watch this movie";
+    return "cannot watch this movie";
+  };
+
+  const age = 28;
   return (
     <div>
       <div>
@@ -29,11 +35,13 @@ const NetflixCards = () => {
       </div>
       <h1>Name: {name}</h1>
       {/* use of dynamic variables in react */}
-      <h2>Rating: {5+8}</h2>
+      <h2>Rating: {5 + 8}</h2>
       {/* use of dynamic expressions in react */}
       <h3>Summary: {summary}</h3>
       <p>Genre: {returnGenre()}</p>
       {/* use of dynamic function calls in react */}
+      <button>{age >= 18 ? "Availabe" : "Not Available"}</button>
+      <button>{AgeLimit()}</button>
     </div>
   );
 };
