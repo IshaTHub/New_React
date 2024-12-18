@@ -11,4 +11,5 @@ export const Practice = () => {
 
 // o/p 0
 // Number of student: 0
-// react does not render `false`,`null`, `undefined`,  it renders `0` and `""`in the DOM, 
+// react does not render `false`,`null`, `undefined`,  it renders `0` and `""`in the DOM as an exception
+//0 is considered as valid node in react
