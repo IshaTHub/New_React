@@ -20,8 +20,8 @@ function Practice() {
   return (
     <div>
       <h1 className="bg-green-400">Counter</h1>
-      <h2>counter value: {counter}</h2>
-      <h2>count value: {count}</h2>
+      <h2>counter values: {counter}</h2>
+      <h2>count values: {count}</h2>
       <button onClick={addValue}>Add value {counter}</button>
       <br />
       <button onClick={removeValue}>Remove value {count}</button>

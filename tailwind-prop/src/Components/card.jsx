@@ -1,7 +1,6 @@
 import React from "react";
-function Card(props) {
-  console.log("props: ", props);
-  console.log("to", props.channel);
+function Card({ channel }) {
+  console.log(channel);
   return (
     <>
       <h1 className="bg-green-400 text-black p-4 rounded-xl my-5">
