@@ -1,6 +1,6 @@
 const Button = (props) => {
   console.log(props);
-  const {children, clickAction, data } = props;
+  const {children, clickAction, data } = props;  //destructuring the props
   const handleClick = () => {
     clickAction?.();  // this is optional chaining '?' is used to check if the clickAction exists. If it does, it will be called. If it doesn't, it will be ignored.
   };
