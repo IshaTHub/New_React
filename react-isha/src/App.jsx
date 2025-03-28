@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Button from "./Button.jsx";
 import Text from "./Text.jsx";
 const App = () => {
@@ -37,6 +37,22 @@ const App = () => {
     setText([...text, { id: 7, text: "New Text" }]);
   };
 
+  const [message, setMessage] = useState("hi there fellas");
+  const changeMessage = useCallback(() => {         //useCallback is used to memoize the function and it is used to avoid unnecessary re-renders. It prevented recreation of function on every render.
+    //console.log("before update", message);
+    setMessage((prevMessage) =>{                    //updating the message asynchronously
+      console.log("previous message", prevMessage);
+      return "Yo guysss";
+    })
+    //console.log("after update", message);
+  }, []);
+
+  //any state variable updation is asynchronous task. React batches the state variable updates.
+  //so when you update the state variable, the value is not updated immediately.
+  //it is updated after the component is re-rendered.
+  //so when you log the state variable after updating it, the value is not updated.
+  //so you need to log the state variable before updating it.
+
   return (
     <>
       <Button data={{ a: { b: { c: "123" } } }} clickAction={handleClick}>
@@ -49,6 +65,8 @@ const App = () => {
         ))}
         <Button clickAction={addMoreText}>Add Text</Button>
       </div>
+      <div>{message}</div>   {/* whenever you want to update anything in the jsx, you use state variables */}
+      <Button onClick={changeMessage}>Change message</Button>    {/* this fucntion changeMessage was recieving diiferent function as everytime app component was rendered in different memory location.*/}
     </>
   );
 };
