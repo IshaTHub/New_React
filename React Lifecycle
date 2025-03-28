@@ -1,0 +1,76 @@
+The Three Phases of the React Component Lifecycle
+1. Mounting: When a Component Is First Rendered
+Mounting occurs when React adds (mounts) a component to the screen.
+
+What triggers mounting?
+
+When you call root.render(<MyComponent />)
+
+When React adds a component to the JSX tree and re-renders its parent to include the new component.
+
+What happens during mounting?
+
+Render: React calls the component function (or render method in class components) to create React elements. React also initializes hooks.
+
+Insert DOM Nodes: React updates the real DOM with the new elements. This step happens during the commit phase when React applies changes to the DOM.
+
+Set DOM Refs: If you use useRef, React sets references to the DOM nodes.
+
+Run useLayoutEffect: React runs the useLayoutEffect functions. Changes made here won't cause visible flickering since the change will occur before the user sees any visual changes (which happen during painting).
+
+DOM Paint: The browser paints the updated UI.
+
+Run useEffect: Finally, React runs the useEffect functions.
+
+2. Updating: When a Component Re-Renders
+Updating happens when React re-renders a component to reflect changes.
+
+What triggers updating?
+
+A state update
+
+An updated context value
+
+A parent component re-rendering (if the component wasn't memoized)
+
+What happens during updating?
+
+Re-render: React recalculates the component's output.
+
+Reconciliation: React compares the new React tree with the previous one to determine changes.
+
+Commit Changes: React updates the DOM with the changes.
+
+Unset DOM Refs: React nullifies ref.current and calls non-stable ref callbacks with null if the referenced DOM node is removed or replaced during the update.
+
+Cleanup useLayoutEffect: React runs cleanup functions from the previous useLayoutEffect.
+
+Set DOM Refs: React sets new ref values for the updated DOM elements (like in the mounting phase).
+
+Run useLayoutEffect: React calls useLayoutEffect hooks, like in the mounting phase (if its dependencies have changed according to Object.is).
+
+Paint the DOM: The browser updates the UI to reflect changes.
+
+Cleanup useEffect: Cleanup functions from the previous useEffect run to prevent memory leaks.
+
+Run useEffect: React runs the updated useEffect function (if its dependencies have changed according to Object.is).
+
+3. Unmounting: When React Removes a Component
+Unmounting occurs when React removes a component from the DOM, freeing resources.
+
+What triggers unmounting?
+
+The component is no longer part of the JSX tree
+
+React unmounts its parent.
+
+The component’s key changed (React will unmount the old instance and mount a new one.).
+
+What happens during unmounting?
+
+Run Cleanup Functions: React runs cleanup functions defined in useEffect and useLayoutEffect.
+
+Unset DOM Refs: React nullifies ref.current and calls ref callbacks with null.
+
+Remove DOM Nodes: React removes the DOM nodes associated with the element.
+
