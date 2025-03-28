@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <Card channel="HBO" obj={myObj} />
-      <Card channel="HBO" obj={myObj} />
+      <Card channel ="HBO" btntext="click me" obj={myObj} />
+      <Card channel ="HBO" btntext="visit me" obj={myObj} />
     </>
   );
 }

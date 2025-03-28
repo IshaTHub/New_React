@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './tailwind.css';
+// import './tailwind.css';
 function Practice() {
   //let counter = 2;
   let [counter, setCounter] = useState(5);
