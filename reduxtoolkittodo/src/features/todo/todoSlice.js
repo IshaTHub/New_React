@@ -29,3 +29,6 @@ export const todoSlice = createSlice({
         }
     }
 })
+
+export const {addTodo, removeTodo, updateTodo} = todoSlice.actions; //export the actions to be used in the component
+export default todoSlice.reducer; //export the reducer to be used in the store
