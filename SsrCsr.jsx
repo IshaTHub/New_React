@@ -1,10 +1,7 @@
 comparison of **SSR vs CSR** highlighting the key differences, benefits, and use cases:
-
----
-
 ### **SSR (Server-Side Rendering) vs CSR (Client-Side Rendering)**
 
-| **Aspect**                | **SSR (Server-Side Rendering)**                                 | **CSR (Client-Side Rendering)**                                |
+| **Aspect**                | **SSR (Server-Side Rendering)***                                | **CSR (Client-Side Rendering)**                                |
 |--------------------------|------------------------------------------------------------------|----------------------------------------------------------------|
 | **What is it?**          | Rendering is done on the **server** before sending HTML to client | Rendering happens in the **browser** using JavaScript         |
 | **Rendering Location**   | Server                                                         | Client (Browser)                                               |
