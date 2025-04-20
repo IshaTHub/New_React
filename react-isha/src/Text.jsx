@@ -1,12 +1,10 @@
+import { memo } from "react";
 
+const Text = memo((props) => {
+	const { children } = props;
+	console.log(children);
+	return;
+	<div>{children}</div>;
+});
 
-const Text = (props) => {
-    const {children} = props;
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
-
-export default Text
+export default Text;

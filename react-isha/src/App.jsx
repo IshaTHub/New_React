@@ -52,6 +52,7 @@ const App = () => {
   //it is updated after the component is re-rendered.
   //so when you log the state variable after updating it, the value is not updated.
   //so you need to log the state variable before updating it.
+  
 
   return (
     <>
@@ -84,3 +85,6 @@ export default App;
 // Keys should be stable, predictable, and unique.
 // Keys should not be index of the item in the array.
 // Keys should not be random numbers.
+
+
+// always perform rerendering of the component in the parent component. not inside the app component.
