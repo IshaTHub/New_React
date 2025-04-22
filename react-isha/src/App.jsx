@@ -6,10 +6,14 @@ const App = () => {
 
   const [showTimer, toggleTimer] = useState(true);
 
+  // const ToggleTimer = () => {
+  //   toggleTimer(false);
+  // }
+
 	return (
 		<>
-			<Timer />
-      <button onClick={removerTimer}>Remove timer</button>
+    {showTimer && <Timer />}
+      <button onClick={() => toggleTimer(!showTimer)}>Remove timer</button>
 
 		</>
 	);

@@ -5,13 +5,14 @@ const Timer = () => {
 
 	useEffect(() => {
 		setInterval(() => {
+            console.log("i am running");  //memory leak, we haven't cleared the interval
 			setCounter((prevCounter) => prevCounter + 1);
 		}, 1000);
 	}, []);
 
 	return (
 		<>
-			<span>Current time is : </span>
+			<span>Current time is : {counter}</span>
 			<br />
 			{/* <button onClick = {startTimer}>Start Time</button> */}
 		</>
