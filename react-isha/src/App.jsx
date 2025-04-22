@@ -1,24 +1,16 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import Text from "./Text";
+//import React from "react";
+import {  useState } from "react";
+//import Text from "./Text";
+import Timer from "./Timer";
 const App = () => {
-	const [data1, setData1] = useState(0);
-	const [data2, setData2] = useState(0);
+
+  const [showTimer, toggleTimer] = useState(true);
 
 	return (
 		<>
-			<Text externalData={data1} />
+			<Timer />
+      <button onClick={removerTimer}>Remove timer</button>
 
-			<br />
-			<button onClick={() => setData1((prevData) => prevData + 1)}>
-				click me
-			</button>
-			<br />
-			<Text externalData={data2} />
-			<br />
-			<button onClick={() => setData2((prevData) => prevData + 1)}>
-				Update
-			</button>
 		</>
 	);
 };
