@@ -1,10 +1,16 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 const Text = memo((props) => {
-	const { children } = props;
-	console.log(children);
-	return;
-	<div>{children}</div>;
+	const { children, externalData } = props;
+
+
+	useEffect(() => {
+			console.log("externalData changed", externalData);
+		}, [externalData]);
+
+	return (
+		<div>{externalData}{children}</div>
+	);
 });
 
 export default Text;
