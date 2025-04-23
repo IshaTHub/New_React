@@ -12,11 +12,11 @@ const App = () => {
 
 	return (
 		<>
-    {showTimer && <Timer />}
+    {showTimer && <Timer customText ="good clockz" />}
       <button onClick={() => toggleTimer(!showTimer)}>Remove timer</button>
 
 		</>
-	);
+	); 
 };
 
 export default App;
