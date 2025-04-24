@@ -1,10 +1,12 @@
 //import React from "react";
 import { useState, useRef } from "react";
+import Timer from "./Timer.jsx";
 
 const App = () => {
 	let myLocalVariable = 0;
 	const ref = useRef(0);
 	const [myCount, setMyCount] = useState(0);
+	console.log(ref.current)
 
 	return (
 		<>
@@ -37,9 +39,13 @@ const App = () => {
 				<span>local var: {myLocalVariable}</span>
 				<br />
 				<span>ref: {ref.current}</span>
+				  <br />
 				<span>state: {myCount}</span>
 				<br />
 			</div>
+
+			<h4>Timer Example</h4>
+			<Timer />
 			
 		</>
 	);
