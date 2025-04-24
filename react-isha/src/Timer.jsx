@@ -36,6 +36,7 @@ const interval = useRef(null);
 			<h3>Dom Example</h3>
 			<input ref={inputRef} type="text" />
 			<button type="button" onClick={() => {
+				console.log(inputRef.current); //this will log the input field
 				if(inputRef.current) inputRef.current.focus(); //this will focus the input field
 			}}>Focus the input box</button>
 		</>
