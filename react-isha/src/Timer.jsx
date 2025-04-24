@@ -37,7 +37,7 @@ const interval = useRef(null);
 			<input ref={inputRef} type="text" />
 			<button type="button" onClick={() => {
 				if(inputRef.current) inputRef.current.focus(); //this will focus the input field
-			}}>Submit</button>
+			}}>Focus the input box</button>
 		</>
 	);
 };
