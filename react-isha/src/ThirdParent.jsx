@@ -1,22 +1,23 @@
 import {useState} from 'react'
 const ThirdParent = (props) => {
 
-    const {handleChaange} = props
+    const {handleChange} = props;
 
     const [counter, setCounter] = useState(0);
 
     const increment = () => {
-        handleChaange?.() = > {
-            
-        }
+        setCounter((prev) => prev + 1);
+        handleChange?.();
     }
 
 
     return <>
-    i am THIRD parent runs slowly <br/>  {counter}
+    i am THIRD parent runs very slowly 
+    <br/>  
+    {counter}
     <br/>
 
-    <button type='button' onClick={() => setCounter((prev) => prev + 1)}>Increment</button>
+    <button type='button' onClick={increment}>Increment me</button>
 
     </> 
 }
